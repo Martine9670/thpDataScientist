@@ -23,7 +23,7 @@ end
 puts "> Cryptos avec un cours inférieur à 6000 :"
 crypto_hash.each do |nom, valeur|
   if valeur < 6000
-    puts "#{nom} => #{valeur}"
+    print "#{nom} => #{valeur}"
   end
 end
 
