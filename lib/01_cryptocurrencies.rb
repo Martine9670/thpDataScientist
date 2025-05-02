@@ -19,6 +19,20 @@ crypto_hash.each do |nom, valeur|
   print "#{nom} => #{valeur}"
 end
 
+# On affiche la ou les plus grosses valeurs
+puts "\n> CRYPTO PLUS GROSSE VALEUR :"
+max_valeur = crypto_hash.values.max
+crypto_hash.each do |nom, valeur|
+  puts "#{nom} => #{valeur}" if valeur == max_valeur
+end
+
+# On affiche la ou les plus petites valeurs
+puts "\n> CRYPTO PLUS PETITE VALEUR :"
+min_valeur = crypto_hash.values.min
+crypto_hash.each do |nom, valeur|
+  puts "#{nom} => #{valeur}" if valeur == min_valeur
+end
+
 # On affiche celles dont la valeur est inférieure à 6000
 puts "\n> CRYPTOS AVEC UN COURS INFERIEUR À 6000 :"
 crypto_hash.each do |nom, valeur|
@@ -38,4 +52,5 @@ puts "\n> CRYPTO LA PLUS CHÈRE PARMI CELLES À MOINS DE 6000 :"
 moins_de_6000.each do |nom, valeur|
   puts "#{nom} => #{valeur}" if valeur == max_valeur
 end
+
 
