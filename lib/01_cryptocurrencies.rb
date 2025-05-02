@@ -14,28 +14,27 @@ cryptos.each_with_index do |crypto, i|
 end
 
 # On affiche les cryptos avec leur valeur
-puts "> Liste des cryptomonnaies :"
+puts "\n> LISTE DES CRYPTOMONNAIES :"
 crypto_hash.each do |nom, valeur|
-  puts "#{nom} => #{valeur}"
+  print "#{nom} => #{valeur}"
 end
 
 # On affiche celles dont la valeur est inférieure à 6000
-puts "> Cryptos avec un cours inférieur à 6000 :"
+puts "\n> CRYPTOS AVEC UN COURS INFERIEUR À 6000 :"
 crypto_hash.each do |nom, valeur|
   if valeur < 6000
     print "#{nom} => #{valeur}"
   end
 end
 
-# On trouve la plus chère parmi celles < 6000
 # On sélectionne seulement celles qui sont < 6000
 moins_de_6000 = crypto_hash.select { |_, valeur| valeur < 6000 }
 
 # On trouve la valeur max dans ce groupe
 max_valeur = moins_de_6000.values.max
 
-# On affiche la/les crypto(s) correspondante(s)
-puts "> Crypto la plus chère parmi celles à moins de 6000 :"
+# On trouve la plus chère parmi celles < 6000
+puts "\n> CRYPTO LA PLUS CHÈRE PARMI CELLES À MOINS DE 6000 :"
 moins_de_6000.each do |nom, valeur|
   puts "#{nom} => #{valeur}" if valeur == max_valeur
 end
